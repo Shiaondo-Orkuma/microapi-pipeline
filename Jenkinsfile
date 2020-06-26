@@ -15,31 +15,31 @@ pipeline {
         stage('Setup') {
             steps {
                 echo '> Building the docker images ...'
-                sh 'make -sC setup'
+                sh 'make setup'
             }
         }
         stage('Dev') {
             steps {
                 echo '> Testing the docker containers ...'
-                sh 'make -sC dev'
+                sh 'make dev'
             }
         }
         stage('Install') {
             steps {
                 echo '> Pushing the docker images ...'
-                sh 'make -sC install'
+                sh 'make nstall'
             }
         }
         stage('Build') {
             steps {
                 echo '> Destroying the docker artifacts ...'
-                sh 'make -sC build'
+                sh 'make build'
             }
         }
         stage('Test') {
             steps {
                 echo '> Deploying the application images ...'
-                sh 'make -sC test'
+                sh 'make test'
             }
         }
     }
