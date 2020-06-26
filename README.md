@@ -1,4 +1,4 @@
-# Team-Microapi
+# Team-Alex
 
 ![Node.js CI](https://github.com/hngi/Team-Incredible-BE/workflows/Node.js%20CI/badge.svg?branch=develop)
 
