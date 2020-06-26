@@ -14,31 +14,26 @@ pipeline {
         }
         stage('Setup') {
             steps {
-                echo '> Building the docker images ...'
+                echo '>  Setting up volumes ...'
                 sh 'make setup'
             }
         }
         stage('Dev') {
             steps {
-                echo '> Testing the docker containers ...'
+                echo '> Provisioning a Development enviroment ...'
                 sh 'make dev'
             }
         }
-        stage('Install') {
-            steps {
-                echo '> Pushing the docker images ...'
-                sh 'make nstall'
-            }
-        }
+        
         stage('Build') {
             steps {
-                echo '> Destroying the docker artifacts ...'
+                echo '> Building the Project files for testing ...'
                 sh 'make build'
             }
         }
         stage('Test') {
             steps {
-                echo '> Deploying the application images ...'
+                echo '> Carrying out a unit test ...'
                 sh 'make test'
             }
         }
